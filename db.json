@@ -1,0 +1,20 @@
+{
+  "books": [
+    {
+      "title": "The Great Gatsby",
+      "author": "F. Scott Fitzgerald",
+      "cover": "assets/book.png",
+      "rating": 4,
+      "category": "Classic",
+      "id": "1"
+    },
+    {
+      "title": "To Kill a Mockingbird",
+      "author": "Harper Lee",
+      "cover": "assets/book.png",
+      "rating": 3,
+      "category": "Classic",
+      "id": "2"
+    }
+  ]
+}

@@ -1,0 +1,45 @@
+<app-header
+  (search)="onSearch($event)"
+  (toggle)="isGridView = $event"
+></app-header>
+
+<div class="my-4">
+  <a routerLink="/add" class="btn btn-primary mb-3">Add New Book</a>
+  <div class="row g-3" *ngIf="filteredBooks.length">
+    <ng-container *ngFor="let book of filteredBooks">
+      <div
+        [class.col-12]="!isGridView"
+        [class.col-6]="isGridView"
+        [class.col-md-4]="isGridView"
+        [class.col-lg-3]="isGridView"
+        class="book-item"
+      >
+        <div class="card h-100 d-flex flex-sm-row flex-md-column">
+          <img
+            [src]="book.cover"
+            class="img-fluid book-cover"
+            alt="book cover"
+          />
+          <div class="card-body">
+            <h5 class="card-title">{{ book.title }}</h5>
+            <p class="card-text">Author: {{ book.author }}</p>
+            <p class="card-text">Category: {{ book.category }}</p>
+            <p class="card-text">Rating: ⭐{{ book.rating }}</p>
+            <a
+              [routerLink]="['/edit', book.id]"
+              class="btn btn-sm btn-warning me-2"
+              >Edit</a
+            >
+            <button
+              class="btn btn-sm btn-danger"
+              (click)="deleteBook(book.id!)"
+            >
+              Delete
+            </button>
+          </div>
+        </div>
+      </div>
+    </ng-container>
+  </div>
+  <p *ngIf="!filteredBooks.length">No books found.</p>
+</div>
