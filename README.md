@@ -1,5 +1,5 @@
 # How To Run
-Clone the Repository using 'git clone _RepositoryUrl_' command.Then install node modules using 'npm i'. Then run 'ng s' or 'ng serve' and open 'http://localhost:4200/' in browser.
+Clone the Repository using 'git clone https://github.com/madhumini/book-library.git' command.Then install node modules using 'npm i'. Then run 'ng s' or 'ng serve' and open 'http://localhost:4200/' in browser.
 
 # Details About the project
 
