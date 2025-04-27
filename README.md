@@ -1,3 +1,8 @@
+# How To Run
+Clone the Repository using 'git clone _RepositoryUrl_' command.Then install node modules using 'npm i'. Then run 'ng s' or 'ng serve' and open 'http://localhost:4200/' in browser.
+
+# Details About the project
+
 # BookLibrary
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.1.6.
