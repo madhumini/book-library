@@ -6,16 +6,11 @@ import { Book } from '../models/book.model';
 @Injectable({ providedIn: 'root' })
 export class BookService {
   private api = 'http://localhost:3000/books';
-  private booksSubject = new BehaviorSubject<Book[]>([]);
-  books$ = this.booksSubject.asObservable();
 
   constructor(private http: HttpClient) {}
 
-  fetchBooks(): void {
-    this.http.get<Book[]>(this.api).subscribe(
-      (books) => this.booksSubject.next(books),
-      (err) => console.error('Error fetching books', err)
-    );
+  fetchBooks(): Observable<Book[]> {
+    return this.http.get<Book[]>(this.api);
   }
 
   getBook(id: string): Observable<Book> {
@@ -25,7 +20,7 @@ export class BookService {
     return this.http.post<Book>(this.api, book);
   }
 
-  updateBook(book: Book,id:string): Observable<Book> {
+  updateBook(book: Book, id: string): Observable<Book> {
     return this.http.put<Book>(`${this.api}/${id}`, book);
   }
 
