@@ -27,7 +27,7 @@ export class BookFormComponent implements OnInit {
       category: ['', Validators.required],
     });
     this.route.paramMap.subscribe((params) => {
-      this.id = this.route.snapshot.paramMap.get('id')!;
+      this.id = params.get('id')!;
 
       if (this.id) {
         this.bookService.getBook(this.id).subscribe((res) => {
